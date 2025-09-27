@@ -8,7 +8,7 @@ The goal of this project is to analyze the sales data of Monday Coffee, a compan
 ## Key Questions
 1. **Coffee Consumers Count**  
    How many people in each city are estimated to consume coffee, given that 25% of the population does?
-**sql**
+***sql
 SELECT 
 	city_id,
 	city_name,
@@ -16,7 +16,7 @@ SELECT
 	city_rank
 FROM city
 ORDER BY Estimated_consumers_millions DESC;
-**sql**
+***sql
 
 2. **Total Revenue from Coffee Sales**  
    What is the total revenue generated from coffee sales across all cities in the last quarter of 2023?

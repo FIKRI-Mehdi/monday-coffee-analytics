@@ -34,7 +34,7 @@ WHERE sale_date >= '01-10-2023'
 	AND sale_date < '01-01-2024'
 GROUP BY ct.city_id, ct.city_name
 ORDER BY total_revenue DESC;
-```sql
+```
 
 3. **Sales Count for Each Product**  
    How many units of each coffee product have been sold?
@@ -48,7 +48,7 @@ LEFT JOIN sales AS s
 ON p.product_id = s.product_id
 GROUP BY p.product_id, p.product_name
 ORDER BY Total_units_sold DESC;
-```sql
+```
 
 4. **Average Sales Amount per City**  
    What is the average sales amount per customer in each city?
@@ -68,7 +68,7 @@ LEFT JOIN city AS ct
 ON c.city_id = ct.city_id
 GROUP BY ct.city_name
 ORDER BY avg_sales_per_customer DESC;
-```sql
+```
 
 5. **City Population and Coffee Consumers**  
    Provide a list of cities along with their populations and estimated coffee consumers.
@@ -84,7 +84,7 @@ INNER JOIN customers AS c
 ON c.city_id = ct.city_id
 GROUP BY ct.city_id, ct.city_name, ct.population
 ORDER BY estimated_consumers DESC;
-```sql
+```
 
 6. **Top Selling Products by City**  
    What are the top 3 selling products in each city based on sales volume?
@@ -111,7 +111,7 @@ SELECT city_name, product_name, Total_sales
 FROM ranked
 WHERE rnk <= 3
 ORDER BY city_name, rnk, product_name;
-```sql
+```
 
 7. **Customer Segmentation by City**  
    How many unique customers are there in each city who have purchased coffee products?
@@ -131,7 +131,7 @@ WITH t1 AS (
 )
 SELECT * FROM t1
 WHERE product_id <= 14;
-```sql
+```
 
 8. **Average Sale vs Rent**  
    Find each city and their average sale per customer and avg rent per customer
@@ -167,7 +167,7 @@ SELECT
 FROM city_rent cr
 JOIN city_table ct ON cr.city_id = ct.city_id
 ORDER BY ct.avg_sale_pr_cx DESC;
-```sql
+```
 
 9. **Monthly Sales Growth**  
    Sales growth rate: Calculate the percentage growth (or decline) in sales over different time periods (monthly).
@@ -202,7 +202,7 @@ SELECT
 FROM growth
 WHERE prev_sales IS NOT NULL
 ORDER BY city_name, month;
-```sql
+```
 
 10. **Market Potential Analysis**  
     Identify top 3 city based on highest sales, return city name, total sale, total rent, total customers, estimated  coffee consumer
@@ -225,7 +225,7 @@ SELECT
 FROM city ct
 JOIN city_sales cs ON cs.city_id = ct.city_id
 ORDER BY cs.total_sales DESC;
-```sql
+```
 
 ## Recommendations
 After analyzing the data, the recommended top three cities for new store openings are:

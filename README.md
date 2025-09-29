@@ -246,3 +246,28 @@ After analyzing the data, the recommended top three cities for new store opening
 3. Average sales per customer is better at 11.6k.
 
 ---
+## Data Visualization & Power BI Dashboard
+
+**Goal.** Turn the SQL insights into a decision-ready view of sales, growth, and market potential.
+
+![Monday Coffee Dashboard](assets/Monday_Coffee_Sales_Dashboard.png)
+
+**What’s in the dashboard**
+- **KPIs:** Total Sales, Total Orders, Total Customers, **Sales per Customer**, **Average Order Value (AOV)**.
+- **Charts:**  
+  - *Total Sales per Product* (bar, top sellers)  
+  - *Total Sales per Month* (line)  
+  - *Total Sales per City* (map with proportional bubbles)
+- **Filters:** Year and City slicers (sync across visuals); cross-highlighting enabled.
+
+**Theme (coffee palette)**
+- Background `#FAF6F1` (cream) · Text `#2B1E16` (espresso) · Accent `#C47E54` (caramel).  
+  Designed for high contrast, minimal ink, and consistent labeling.
+
+**Model & measures (DAX)**
+```DAX
+Total Sales = SUM(Sales[total])
+Total Orders = DISTINCTCOUNT(Sales[sale_id])
+Customers = DISTINCTCOUNT(Sales[customer_id])
+AOV = DIVIDE([Total Sales], [Total Orders])
+Sales per Customer = DIVIDE([Total Sales], [Customers])

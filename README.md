@@ -250,7 +250,7 @@ After analyzing the data, the recommended top three cities for new store opening
 
 **Goal.** Turn the SQL insights into a decision-ready view of sales, growth, and market potential.
 
-![Monday Coffee Dashboard](assets/Monday_Coffee_Sales_Dashboard.png)
+![Monday Coffee Dashboard](main/Monday_Coffee_Sales_Dashboard.png)
 
 **What’s in the dashboard**
 - **KPIs:** Total Sales, Total Orders, Total Customers, **Sales per Customer**, **Average Order Value (AOV)**.
